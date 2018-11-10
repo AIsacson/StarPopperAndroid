@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 	public Rigidbody rb;
 	public float speed;
 	public GameObject child;
+    public Joystick joystick;
 
 	private float moveHorizontal;
 	private float moveVertical;
@@ -33,8 +34,8 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		moveVertical = Input.GetAxis ("Vertical");
-		moveHorizontal = Input.GetAxis ("Horizontal");
+        moveVertical = joystick.Vertical;
+        moveHorizontal = joystick.Horizontal;
 
 		movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
 
